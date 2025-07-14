@@ -1,0 +1,34 @@
+{
+  "expo": {
+    "name": "eFood - Food Delivery",
+    "slug": "efood-mobile-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+
+    "userInterfaceStyle": "light",
+          "splash": {
+        "resizeMode": "contain",
+        "backgroundColor": "#ffffff"
+      },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.efood.mobileapp"
+    },
+    "android": {
+      "package": "com.efood.mobileapp",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION"
+      ]
+    },
+    "web": {
+    },
+
+    "plugins": [
+      "expo-location"
+    ]
+  }
+} 

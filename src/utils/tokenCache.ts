@@ -1,0 +1,31 @@
+import * as SecureStore from 'expo-secure-store';
+import { TokenCache } from '@clerk/clerk-expo/dist/cache';
+
+const createTokenCache = (): TokenCache => {
+  return {
+    async getToken(key: string) {
+      try {
+        return await SecureStore.getItemAsync(key);
+      } catch (error) {
+        console.error('Error getting token from cache:', error);
+        return null;
+      }
+    },
+    async saveToken(key: string, value: string) {
+      try {
+        await SecureStore.setItemAsync(key, value);
+      } catch (error) {
+        console.error('Error saving token to cache:', error);
+      }
+    },
+    async clearToken(key: string) {
+      try {
+        await SecureStore.deleteItemAsync(key);
+      } catch (error) {
+        console.error('Error clearing token from cache:', error);
+      }
+    },
+  };
+};
+
+export const tokenCache = createTokenCache(); 

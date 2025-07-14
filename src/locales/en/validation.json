@@ -1,0 +1,136 @@
+{
+  "required": "{{field}} is required",
+  "email": "Please enter a valid email address",
+  "min": "{{field}} must be at least {{min}} characters",
+  "max": "{{field}} must not exceed {{max}} characters",
+  "minLength": "{{field}} must be at least {{min}} characters long",
+  "maxLength": "{{field}} must not exceed {{max}} characters",
+  "numeric": "{{field}} must be a number",
+  "integer": "{{field}} must be an integer",
+  "decimal": "{{field}} must be a decimal number",
+  "positive": "{{field}} must be a positive number",
+  "negative": "{{field}} must be a negative number",
+  "string": "{{field}} must be a string",
+  "boolean": "{{field}} must be true or false",
+  "array": "{{field}} must be an array",
+  "object": "{{field}} must be an object",
+  "unique": "{{field}} already exists",
+  "exists": "{{field}} does not exist",
+  "confirmed": "{{field}} confirmation does not match",
+  "date": "{{field}} must be a valid date",
+  "dateFormat": "{{field}} must be in format {{format}}",
+  "before": "{{field}} must be before {{before}}",
+  "after": "{{field}} must be after {{after}}",
+  "url": "{{field}} must be a valid URL",
+  "phone": "{{field}} must be a valid phone number",
+  "image": "{{field}} must be a valid image file",
+  "file": "{{field}} must be a valid file",
+  "mimes": "{{field}} must be a file of type: {{types}}",
+  "maxFileSize": "{{field}} size must not exceed {{size}}",
+  "minFileSize": "{{field}} size must be at least {{size}}",
+  "regex": "{{field}} format is invalid",
+  "alpha": "{{field}} may only contain letters",
+  "alphaNum": "{{field}} may only contain letters and numbers",
+  "alphaDash": "{{field}} may only contain letters, numbers, dashes and underscores",
+  "json": "{{field}} must be a valid JSON string",
+  "ip": "{{field}} must be a valid IP address",
+  "uuid": "{{field}} must be a valid UUID",
+  "creditCard": "{{field}} must be a valid credit card number",
+  "password": {
+    "min": "Password must be at least {{min}} characters",
+    "max": "Password must not exceed {{max}} characters",
+    "uppercase": "Password must contain at least one uppercase letter",
+    "lowercase": "Password must contain at least one lowercase letter",
+    "number": "Password must contain at least one number",
+    "special": "Password must contain at least one special character",
+    "confirmed": "Password confirmation does not match"
+  },
+  "user": {
+    "firstName": "First name is required",
+    "lastName": "Last name is required",
+    "email": "Valid email address is required",
+    "phone": "Valid phone number is required",
+    "password": "Password is required",
+    "confirmPassword": "Password confirmation is required",
+    "userType": "User type is required",
+    "status": "Status is required"
+  },
+  "order": {
+    "products": "At least one product is required",
+    "deliveryAddress": "Delivery address is required",
+    "paymentMethod": "Payment method is required",
+    "deliveryTime": "Delivery time is required",
+    "phoneNumber": "Phone number is required for delivery"
+  },
+  "product": {
+    "name": "Product name is required",
+    "price": "Product price is required",
+    "category": "Product category is required",
+    "description": "Product description is required",
+    "image": "Product image is required",
+    "status": "Product status is required"
+  },
+  "category": {
+    "name": "Category name is required",
+    "image": "Category image is required",
+    "status": "Category status is required"
+  },
+  "address": {
+    "type": "Address type is required",
+    "address": "Address is required",
+    "city": "City is required",
+    "latitude": "Latitude is required",
+    "longitude": "Longitude is required",
+    "contactPersonName": "Contact person name is required",
+    "contactPersonNumber": "Contact person number is required"
+  },
+  "branch": {
+    "name": "Branch name is required",
+    "email": "Branch email is required",
+    "phone": "Branch phone is required",
+    "address": "Branch address is required",
+    "latitude": "Branch latitude is required",
+    "longitude": "Branch longitude is required"
+  },
+  "coupon": {
+    "title": "Coupon title is required",
+    "code": "Coupon code is required",
+    "discountType": "Discount type is required",
+    "discount": "Discount amount is required",
+    "startDate": "Start date is required",
+    "expireDate": "Expire date is required",
+    "minPurchase": "Minimum purchase amount is required"
+  },
+  "banner": {
+    "title": "Banner title is required",
+    "image": "Banner image is required",
+    "status": "Banner status is required"
+  },
+  "deliveryMan": {
+    "firstName": "First name is required",
+    "lastName": "Last name is required",
+    "email": "Email is required",
+    "phone": "Phone number is required",
+    "identityType": "Identity type is required",
+    "identityNumber": "Identity number is required",
+    "identityImage": "Identity image is required",
+    "image": "Profile image is required",
+    "branchId": "Branch assignment is required"
+  },
+  "review": {
+    "rating": "Rating is required",
+    "comment": "Comment is required",
+    "productId": "Product is required",
+    "orderId": "Order is required"
+  },
+  "table": {
+    "number": "Table number is required",
+    "capacity": "Table capacity is required",
+    "status": "Table status is required"
+  },
+  "cuisine": {
+    "name": "Cuisine name is required",
+    "image": "Cuisine image is required",
+    "status": "Cuisine status is required"
+  }
+} 
