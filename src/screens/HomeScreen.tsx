@@ -1,45 +1,43 @@
 import React from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, ScrollView, FlatList } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { useCategories } from '../hooks/useCategories';
+import { useProducts } from '../hooks/useProducts';
+import { CategoryCard } from '../components/CategoryCard';
+import { ProductCard } from '../components/ProductCard';
 
 export const HomeScreen: React.FC = () => {
+  const navigation = useNavigation();
+  const { data: catData } = useCategories();
+  const { data: prodData } = useProducts();
+
+  const categories = catData?.data.categories || [];
+  const products = prodData?.data.products || [];
+
   return (
-    <ScrollView style={{ flex: 1, backgroundColor: 'white' }}>
-      <View style={{ padding: 20 }}>
-        <Text style={{ fontSize: 28, fontWeight: 'bold', marginBottom: 16, color: '#1f2937' }}>
-          Welcome to eFood
-        </Text>
-        
-        <Text style={{ fontSize: 16, color: '#6b7280', marginBottom: 24 }}>
-          10-minute food delivery from your favorite cloud kitchen in Bengaluru
-        </Text>
-
-        <View style={{ backgroundColor: '#fef2f2', padding: 16, borderRadius: 8, marginBottom: 24 }}>
-          <Text style={{ fontSize: 18, fontWeight: '600', color: '#ef4444', marginBottom: 8 }}>
-            🚀 Lightning Fast Delivery
-          </Text>
-          <Text style={{ color: '#7f1d1d' }}>
-            Get your favorite food delivered in just 10 minutes!
-          </Text>
-        </View>
-
-        <View style={{ backgroundColor: '#f0f9ff', padding: 16, borderRadius: 8, marginBottom: 24 }}>
-          <Text style={{ fontSize: 18, fontWeight: '600', color: '#0ea5e9', marginBottom: 8 }}>
-            📍 Service Areas
-          </Text>
-          <Text style={{ color: '#0c4a6e' }}>
-            Currently serving pin codes: 560001, 560102, 560103, 560104, 560105
-          </Text>
-        </View>
-
-        <View style={{ backgroundColor: '#f0fdf4', padding: 16, borderRadius: 8 }}>
-          <Text style={{ fontSize: 18, fontWeight: '600', color: '#22c55e', marginBottom: 8 }}>
-            🍕 Fresh Food
-          </Text>
-          <Text style={{ color: '#14532d' }}>
-            Made fresh in our cloud kitchen with the finest ingredients
-          </Text>
-        </View>
-      </View>
+    <ScrollView className="flex-1 bg-white" contentContainerStyle={{ padding: 16 }}>
+      <Text className="text-2xl font-bold mb-4 text-secondary-900">Categories</Text>
+      <FlatList
+        data={categories}
+        keyExtractor={(item) => item.id}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        renderItem={({ item }) => (
+          <CategoryCard
+            category={item}
+            onPress={() => navigation.navigate('Menu' as never, { categoryId: item.id } as never)}
+          />
+        )}
+        className="mb-6"
+      />
+      <Text className="text-2xl font-bold mb-4 text-secondary-900">Popular</Text>
+      {products.slice(0, 5).map((product) => (
+        <ProductCard
+          key={product.id}
+          product={product}
+          onPress={() => navigation.navigate('ProductDetails' as never, { productId: product.id } as never)}
+        />
+      ))}
     </ScrollView>
   );
-}; 
+};

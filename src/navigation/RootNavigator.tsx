@@ -5,6 +5,7 @@ import { useLocation } from '../context/LocationContext';
 
 import { AuthNavigator } from './AuthNavigator';
 import { MainNavigator } from './MainNavigator';
+import { ProductDetailsScreen } from '../screens/ProductDetailsScreen';
 import { LocationCheckScreen } from '../screens/LocationCheckScreen';
 import { LoadingScreen } from '../screens/LoadingScreen';
 
@@ -25,7 +26,10 @@ export const RootNavigator: React.FC = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       {isSignedIn ? (
-        <Stack.Screen name="Main" component={MainNavigator} />
+        <>
+          <Stack.Screen name="Main" component={MainNavigator} />
+          <Stack.Screen name="ProductDetails" component={ProductDetailsScreen} />
+        </>
       ) : (
         <Stack.Screen name="Auth" component={AuthNavigator} />
       )}
